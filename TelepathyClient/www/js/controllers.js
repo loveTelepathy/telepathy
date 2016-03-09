@@ -15,10 +15,8 @@ angular.module('starter.controllers', [])
   var userInfo = {
     'users': {
       "kim": "1111",
-      "lee": "2222",
-      "park": "3333",
-      "sim": "5555",
-      "jang": "6666"
+      "sim": "2222",
+      "jang": "3333"
     },
     'valid': function (logindata) {
       for (var user in this.users) {

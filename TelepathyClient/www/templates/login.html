@@ -1,0 +1,40 @@
+<ion-modal-view>
+<!--
+    <ion-header-bar>
+        <h1 class="title">Login</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeLogin()">Close</button>
+        </div>
+    </ion-header-bar>
+-->
+    <ion-content>
+        <div class="item" ng-click="toggleShowLabel()">
+            <h1 style="text-align: center; margin-top:10%; font-size:300%; font-family: Serif;color:#ff4080;font-style: oblique;font-weight: bold;">Love Telepathy</h1>
+            <p style="text-align: center;margin-top:10%;color:#ff0000;">An app to say "I love you" without words...</p>
+            <img src="img/heart.png" style="width:50%;margin-left:25%;margin-top:6%;margin-bottom:2%;">
+        </div>
+        <form ng-submit="doLogin()">
+            <div class="list">
+                <label class="item item-input item-stacked-label" ng-show="showInputLabel">
+                    <span class="input-label">Email</span>
+                    <input type="text" placeholder="abc@def.com" ng-model="loginData.username">
+                </label>
+                <label class="item item-input item-stacked-label" ng-show="showInputLabel">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="password" ng-model="loginData.password">
+                </label>
+                <label class="item">
+                    <div style="height:70%;margin:0px 5% 0px 5%">
+                        <button class="button button-block button-assertive" type="submit">Telepathy 계정으로 로그인</button>
+                        <button class="button button-block button-positive" type="submit">Facebook 계정으로 로그인</button>
+                        <button class="button button-block button-energized" type="submit">Kakao 계정으로 로그인</button>
+                    </div>
+                </label>
+                <div class="row">
+                    <a class="col button button-outline button-stable button-small" style="font-size: 60%;margin:1% 2% 0% 2%">회원 가입</a>
+                    <a class="col button button-outline button-stable button-small" style="font-size: 60%;margin:1% 2% 0% 2%">Email/PW 찾기</a>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,38 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title" style="text-align: center; font-size:120%; font-family: Serif;color:#ff4080;font-style: oblique;font-weight: bold;">Member Registration </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeRegister()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="item">
+            <img src="img/heart.png" style="width:50%;margin-left:25%;margin-top:0%;margin-bottom:0%;">
+        </div>
+        <form ng-submit="doRegister()">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="text" placeholder="abc@def.com" ng-model="registerData.username">
+                </label>
+                <label class="item item-input item-stacked-label" >
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="password" ng-model="registerData.password">
+                </label>
+                <label class="item item-input" >
+                    <input type="password" placeholder="confirm" ng-model="registerData.password_confirm">
+                </label>
+                <label class="item">
+                    <div style="height:70%;margin:0px 2% 0px 2%">
+                        <button class="button button-block button-assertive" type="submit">가입</button>
+                    </div>
+                    <div class="row">
+                        <a class="col button button-block button-positive button-small" style="font-size: 60%;margin:1% 1% 0% 1%" type="submit">Facebook으로 시작하기</a>
+                        <a class="col button button-block button-energized button-small" style="font-size: 60%;margin:1% 1% 0% 1%" type="submit">KakaoTalk으로 시작하기</a>
+                    </div>
+                </label>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

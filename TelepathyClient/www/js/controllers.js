@@ -1,23 +1,27 @@
 angular.module('starter.controllers', [])
 
-  .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function ($scope) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
   $scope.$on('$ionicView.enter', function (e) {
-    if (loginStatus != true)
-      $scope.modal.show();
+    //    if (loginStatus != true)
+    //      $scope.modal.show();
   });
 
+
+})
+
+.controller('LoginCtrl', function ($scope, $state, $ionicModal, $timeout) {
   var loginStatus = false;
   var userInfo = {
     'users': {
       "kim": "1111",
       "sim": "2222",
       "jang": "3333",
-      "new":"4444"
+      "new": "4444"
     },
     'valid': function (logindata) {
       for (var user in this.users) {
@@ -30,27 +34,47 @@ angular.module('starter.controllers', [])
   };
 
   $scope.showInputLabel = false;
-  $scope.toggleShowLabel = function(){
+  $scope.toggleShowLabel = function () {
     $scope.showInputLabel = !($scope.showInputLabel);
   };
   // Form data for the login modal
   $scope.loginData = {};
+  $scope.registerData = {};
 
   // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
+  $ionicModal.fromTemplateUrl('templates/registration.html', {
     scope: $scope
   }).then(function (modal) {
     $scope.modal = modal;
   });
 
   // Triggered in the login modal to close it
-  $scope.closeLogin = function () {
+  $scope.closeRegister = function () {
     $scope.modal.hide();
   };
 
   // Open the login modal
-  $scope.login = function () {
+  $scope.register = function () {
     $scope.modal.show();
+  };
+
+  $scope.doRegister = function () {
+    console.log('Doing Register', $scope.registerData.username);
+    console.log('Doing Register', $scope.registerData.password);
+    console.log('Doing Register', $scope.registerData.password_confirm);
+    // Simulate a login delay. Remove this and replace with your login
+    // code if using a login system
+    $timeout(function () {
+      $scope.closeRegister();
+      //      if (userInfo.valid($scope.loginData) === true) {
+      //        console.log('login success');
+      //        loginStatus = true;
+      //        $state.go('app.main');
+      //      } else {
+      //        console.log('login failed');
+      //        alert('login failed...');
+      //      }
+    }, 1000);
   };
 
   // Perform the login action when the user submits the login form
@@ -62,9 +86,8 @@ angular.module('starter.controllers', [])
     $timeout(function () {
       if (userInfo.valid($scope.loginData) === true) {
         console.log('login success');
-        $scope.closeLogin();
         loginStatus = true;
-        alert('login success...');
+        $state.go('app.main');
       } else {
         console.log('login failed');
         alert('login failed...');
@@ -73,33 +96,8 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function ($scope) {
-  $scope.playlists = [
-    {
-      title: 'Reggae',
-      id: 1
-    },
-    {
-      title: 'Chill',
-      id: 2
-    },
-    {
-      title: 'Dubstep',
-      id: 3
-    },
-    {
-      title: 'Indie',
-      id: 4
-    },
-    {
-      title: 'Rap',
-      id: 5
-    },
-    {
-      title: 'Cowbell',
-      id: 6
-    }
-  ];
-})
-
-.controller('PlaylistCtrl', function ($scope, $stateParams) {});
+.controller('TelepathyCtrl', function ($scope, $state, $ionicModal, $stateParams) {
+  $scope.invite = function(){
+    
+  };
+});

@@ -1,0 +1,6 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/ionic-space/telepathy/TelepathyClient/platforms/android/build/intermediates/assets/debug/www/js/controllers.js",
+        "C:/ionic-space/telepathy/TelepathyClient/platforms/android/assets/www/lib/ionic/js/angular/angular-sanitize.js"
+    ]
+}

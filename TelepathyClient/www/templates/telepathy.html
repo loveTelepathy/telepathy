@@ -1,0 +1,25 @@
+<ion-view view-title="Telepathy">
+  <ion-nav-title class="title">
+    <h1 class="title" style="text-align: center; font-size:120%; font-family: Serif;color:#ff4080;font-style: oblique;font-weight: bold;">Telepathy</h1>
+  </ion-nav-title>
+  <ion-content>
+    <div class="row" style="margin-top:10%">
+      <div class="col" ng-click="invite()">
+        <input style="width: 96px; height: 96px;border-radius: 48px;
+                      display: block; margin-left:15%;margin-right: auto;" 
+                      type="image" src="img/jws_thumb.jpg" border="0">
+      </div>
+      <div class="col" ng-click="invite()">
+        <input style="width: 96px; height: 96px;border-radius: 48px;
+                      display: block; margin-left: auto;margin-right:15%;" 
+               type="image" src="img/kth_thumb.jpg" border="0">
+      </div>
+    </div>
+    
+    <div ng-click="sendTelepathy()" ng-model="ncount=0">
+      <input type="image" src="img/heart.png" style="width:50%;margin-left:25%;margin-top:auto;margin-bottom:auto;">
+      <a style="font-size:500%; color:black;">{{ncount}}</a>
+    </div>
+
+  </ion-content>
+</ion-view>

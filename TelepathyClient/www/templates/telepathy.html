@@ -3,23 +3,23 @@
     <h1 class="title" style="text-align: center; font-size:120%; font-family: Serif;color:#ff4080;font-style: oblique;font-weight: bold;">Telepathy</h1>
   </ion-nav-title>
   <ion-content>
-    <div class="row" style="margin-top:10%">
-      <div class="col" ng-click="invite()">
-        <input style="width: 96px; height: 96px;border-radius: 48px;
-                      display: block; margin-left:15%;margin-right: auto;" 
+    <div class="row" style="margin-top:10%;">
+      <div class="col" ng-click="changeprofile()">
+        <input style="width: 50%; height: 50%;border-radius: 50%;
+                      display: block; margin-left:15%;margin-right: auto; position:relative;"
                       type="image" src="img/jws_thumb.jpg" border="0">
+        <a style="font-size:150%; color:blue; margin-top:2%;position:absolute;text-align:center;width:35%">jws</a>
       </div>
       <div class="col" ng-click="invite()">
-        <input style="width: 96px; height: 96px;border-radius: 48px;
-                      display: block; margin-left: auto;margin-right:15%;" 
+        <input style="width: 50%; height: 50%;border-radius: 50%;
+                      display: block; margin-left: auto;margin-right:15%;position:relative;"
                type="image" src="img/kth_thumb.jpg" border="0">
+        <a style="font-size:150%; color:blue; margin-top:2%;position:absolute;text-align:center;width:55%">kth</a>
       </div>
     </div>
-    
-    <div ng-click="sendTelepathy()" ng-model="ncount=0">
-      <input type="image" src="img/heart.png" style="width:50%;margin-left:25%;margin-top:auto;margin-bottom:auto;">
-      <a style="font-size:500%; color:black;">{{ncount}}</a>
+    <div  class="parent"  ng-click="sendTelepathy()">
+      <input type="image" src="img/heart.png" style="position:absolute; z-index=2; width:{{heartwdt}}%;margin-left:{{marginleft}}%;margin-top:{{imagemargintop}}%;margin-bottom:auto;">
+      <a class="overlay" style="font-size:500%; color:white; z-index=3;margin-top:{{textmargintop}}%">{{ncount}}</a>
     </div>
-
   </ion-content>
 </ion-view>

@@ -31,8 +31,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
-  
-    .state('login', {
+
+  .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'LoginCtrl'
@@ -47,16 +47,14 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-    .state('app.setting', {
+  .state('app.setting', {
     url: '/setting',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/setting.html'
-        }
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/setting.html'
       }
-    })
-
-
+    }
+  })
   .state('app.main', {
     url: '/telepathy',
     views: {

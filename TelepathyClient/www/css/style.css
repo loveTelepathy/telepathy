@@ -1,1 +1,28 @@
 /* Empty. Add your own CSS if you like */
+.bgtext
+{
+  background: url("../img/heart.png") no-repeat center center;
+  background-size:contain;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  vertical-align: middle;
+}
+
+
+.parent{
+  position: relative;
+  margin: 2em;
+}
+
+.parent img{
+  position: absolute;
+}
+
+.parent .overlay{
+  position: absolute;
+  top: -1em;
+  text-align: center;
+  width: 100%;
+}

@@ -97,7 +97,27 @@ angular.module('starter.controllers', [])
 })
 
 .controller('TelepathyCtrl', function ($scope, $state, $ionicModal, $stateParams) {
+  $scope.changeprofile = function(){
+
+  };
   $scope.invite = function(){
     
   };
+
+  $scope.ncount = 0;
+  $scope.heartwdt = 50;
+  $scope.marginleft = 25;
+  $scope.imagemargintop=25;
+  $scope.textmargintop = $scope.imagemargintop + 35;
+  $scope.sendTelepathy = function(){
+    $scope.ncount++;
+    if($scope.ncount>24)
+      $scope.ncount=0;
+
+    $scope.heartwdt = 50+50*($scope.ncount)/24;
+    $scope.marginleft = (100 - $scope.heartwdt)/2;
+
+    //$scope.textmargintop = 40+20*($scope.ncount)/24;
+    $scope.imagemargintop=25-25*($scope.ncount)/24;
+  }
 });

@@ -108,7 +108,7 @@ angular.module('starter.controllers', [])
   $scope.heartwdt = 50;
   $scope.marginleft = 25;
   $scope.imagemargintop=25;
-  $scope.textmargintop = $scope.imagemargintop + 35;
+  $scope.textmargintop = $scope.imagemargintop + 40;
   $scope.sendTelepathy = function(){
     $scope.ncount++;
     if($scope.ncount>24)

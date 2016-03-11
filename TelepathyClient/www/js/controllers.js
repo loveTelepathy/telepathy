@@ -15,6 +15,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl', function ($scope, $state, $ionicModal, $timeout) {
+
+  //var localStorage = window.localStorage;
   var loginStatus = false;
   var userInfo = {
     'users': {
@@ -88,12 +90,29 @@ angular.module('starter.controllers', [])
         console.log('login success');
         loginStatus = true;
         $state.go('app.main');
+        localStorage.setItem('user', $scope.loginData.username);
+        localStorage.setItem('pass', $scope.loginData.password);
       } else {
         console.log('login failed');
         alert('login failed...');
       }
     }, 1000);
   };
+
+
+//  var savedUser = localStorage.getItem('user');
+//  if(savedData!=null)
+//  {
+//    $scope.loginData.username = savedUser;
+//    $scope.loginData.password = localStorage.getItem('pass');;
+//    if (userInfo.valid($scope.loginData) === true)
+//    {
+//      //console.log('already login");
+//      loginStatus = true;
+//      $state.go('app.main');
+//    }
+//  }
+
 })
 
 .controller('TelepathyCtrl', function ($scope, $state, $ionicModal, $stateParams) {

@@ -25,11 +25,51 @@
 //    res.send(sessions[id].title);
 //};
 var sessions = [
-    {id:0 , user:"kim",name:"keon ho",passwd:"1111", gender:"male", location:"hwasung", token:""},
-    {id:1 , user:"sim", name:"won sang",passwd:"2222",gender:"male", location:"suwon", token:""},
-    {id:2 , user:"jang",name:"yong ki",passwd:"3333",gender:"male", location:"yongin", token:""},
-    {id:3 , user:"telepathy", name:"loveTelpathy",passwd:"4444",gender:"female", location:"Seoul", token:""},
-    {id:4 , user:"guest", name:"guest",passwd:"5555", gender:"female", location:"Sydney", token:""}
+    {
+        id: 0,
+        user: "kim",
+        name: "keon ho",
+        passwd: "1111",
+        gender: "male",
+        location: "hwasung",
+        token: ""
+    },
+    {
+        id: 1,
+        user: "sim",
+        name: "won sang",
+        passwd: "2222",
+        gender: "male",
+        location: "suwon",
+        token: ""
+    },
+    {
+        id: 2,
+        user: "jang",
+        name: "yong ki",
+        passwd: "3333",
+        gender: "male",
+        location: "yongin",
+        token: ""
+    },
+    {
+        id: 3,
+        user: "telepathy",
+        name: "loveTelpathy",
+        passwd: "4444",
+        gender: "female",
+        location: "Seoul",
+        token: ""
+    },
+    {
+        id: 4,
+        user: "guest",
+        name: "guest",
+        passwd: "5555",
+        gender: "female",
+        location: "Sydney",
+        token: ""
+    }
 ];
 
 
@@ -59,33 +99,32 @@ exports.findById = function (req, res, next) {
 exports.auth = function (req, res, next) {
     var user = req.params.user;
     var passwd = req.params.passwd;
-    var found=false;
-    for(var i=0; i<sessions.length; i++){
-        var s=sessions[i];
+    var found = false;
+    for (var i = 0; i < sessions.length; i++) {
+        var s = sessions[i];
 
-        if(s.user==user && s.passwd==passwd){
-            sessions[i].token=passwd+"ok";
+        if (s.user == user && s.passwd == passwd) {
+            sessions[i].token = passwd + "ok";
             res.send(sessions[i].token);
             found = true;
-        }else{
-            sessions[i].token="";
+        } else {
+            sessions[i].token = "";
         }
     }
 
-    if(found===false)
+    if (found === false)
         res.send("false");
 };
 
 exports.getName = function (req, res, next) {
     var token = req.params.token;
-    for(var i=0; i<sessions.length; i++){
-        var s=sessions[i];
+    for (var i = 0; i < sessions.length; i++) {
+        var s = sessions[i];
 
-        if(s.token==token){
+        if (s.token == token) {
             res.send(sessions[i].name);
             return;
         }
     }
     res.send("expired");
 };
-

@@ -33,37 +33,46 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngAnimate'])
   })
 
   .state('login', {
-    url: '/login',
-    templateUrl: 'templates/login.html',
-    controller: 'LoginCtrl'
-  })
-
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
+    })
+    .state('app.main', {
+      url: '/telepathy',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/telepathy.html',
+          controller: 'TelepathyCtrl'
+        }
       }
-    }
-  })
+    })
+    .state('app.recommend', {
+      url: '/recommend',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/recommend.html'
+        }
+      }
+    })
 
   .state('app.setting', {
-    url: '/setting',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/setting.html'
+      url: '/setting',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/setting.html',
+          controller: 'SettingCtrl'
+        }
       }
-    }
-  })
-  .state('app.main', {
-    url: '/telepathy',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/telepathy.html',
-        controller: 'TelepathyCtrl'
+    })
+    .state('app.notify', {
+      url: '/notify',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/notify.html'
+        }
       }
-    }
-  });
+    });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });
